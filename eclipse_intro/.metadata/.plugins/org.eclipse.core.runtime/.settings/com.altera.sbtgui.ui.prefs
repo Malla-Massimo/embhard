@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=C\:\\master\\EmbHard\\project\\software\\led_counter
+newSoftwareExampleWizardPage.sopcinfoFile=C\:\\master\\EmbHard\\project\\intro_qsys.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\master\\EmbHard\\project\\software\\led_counter_bsp

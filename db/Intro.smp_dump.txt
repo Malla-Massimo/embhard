@@ -1,0 +1,59 @@
+
+State Machine - |Intro|intro_qsys:inst|DMA_LCD_ctrl:lcd_dma_0|state_reg_LCD_s
+Name state_reg_LCD_s.S3 state_reg_LCD_s.S2 state_reg_LCD_s.S1 state_reg_LCD_s.IDLE 
+state_reg_LCD_s.IDLE 0 0 0 0 
+state_reg_LCD_s.S1 0 0 1 1 
+state_reg_LCD_s.S2 0 1 0 1 
+state_reg_LCD_s.S3 1 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|DMA_LCD_ctrl:lcd_dma_0|state_reg_ctl_s
+Name state_reg_ctl_s.MASTER_WAITREQUEST state_reg_ctl_s.MASTER_CNT_INC state_reg_ctl_s.MASTER_S2 state_reg_ctl_s.MASTER_S1 state_reg_ctl_s.IDLE 
+state_reg_ctl_s.IDLE 0 0 0 0 0 
+state_reg_ctl_s.MASTER_S1 0 0 0 1 1 
+state_reg_ctl_s.MASTER_S2 0 0 1 0 1 
+state_reg_ctl_s.MASTER_CNT_INC 0 1 0 0 1 
+state_reg_ctl_s.MASTER_WAITREQUEST 1 0 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|intro_qsys_SDRAM_controller:sdram_controller|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|intro_qsys_SDRAM_controller:sdram_controller|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|intro_qsys_SDRAM_controller:sdram_controller|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|intro_qsys_SDRAM_controller:sdram_controller|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |Intro|intro_qsys:inst|intro_qsys_CPU:cpu|intro_qsys_CPU_cpu:cpu|intro_qsys_CPU_cpu_nios2_oci:the_intro_qsys_CPU_cpu_nios2_oci|intro_qsys_CPU_cpu_debug_slave_wrapper:the_intro_qsys_CPU_cpu_debug_slave_wrapper|intro_qsys_CPU_cpu_debug_slave_tck:the_intro_qsys_CPU_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

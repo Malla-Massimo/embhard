@@ -1,0 +1,40 @@
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "sys/alt_irq.h"
+
+
+volatile int counter = 0;
+
+void timer_interrupt(void *context, alt_u32 id){
+	counter ++; // increase the counter;
+	// write counter value on the parallel port;
+	// acknowledge IRQ on the timer;
+	// Acknowledge du timer (remise à zéro du flag d’interruption)
+	IOWR_16DIRECT(TIMER_0_BASE, 0, 0x0);    // éventuellement reset du statut
+	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x7);    // recharger ou clear selon ton timer
+}
+
+int main ()
+{
+	alt_irq_register(TIMER_0_IRQ,(void*)2,(alt_isr_func)timer_interrupt);
+
+	printf( " Le t s s t a r t counting \n " ) ;
+	IOWR_32DIRECT(GPIO_0_BASE , 0 , 0xFFFFFFFF); // Set LEDS as output
+
+	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x7);   // Start + Continuous + Interrupt Enable
+
+	// Autoriser globalement les interruptions (au niveau du processeur)
+	alt_irq_enable_all(ALT_IRQ_ENABLED);
+
+	//int counter = 0 ;
+	while(1)
+	{
+		//counter ++;
+		printf( " coun te r = %d \n " , counter) ;
+		IOWR_32DIRECT(GPIO_0_BASE , 8 , counter) ;
+		//int value = IORD_32DIRECT(GPIO_0_BASE , 1) ;
+		//printf("Value: %d", value);
+	}
+}
+

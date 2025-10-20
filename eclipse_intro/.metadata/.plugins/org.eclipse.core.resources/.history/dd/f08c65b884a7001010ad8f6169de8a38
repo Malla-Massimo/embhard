@@ -1,0 +1,149 @@
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "sys/alt_irq.h"
+
+
+volatile int counter = 0;
+
+
+void LCD_Write_Command(int command);
+void LCD_Write_Data(int data) ;
+void init_LCD();
+void timer_interrupt(void *context, alt_u32 id);
+
+int main ()
+{
+	alt_irq_register(TIMER_0_IRQ,(void*)2,(alt_isr_func)timer_interrupt);
+
+	printf( " Le t s s t a r t counting \n " ) ;
+	IOWR_32DIRECT(GPIO_0_BASE , 0 , 0xFFFFFFFF); // Set LEDS as output
+
+	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x7);   // Start + Continuous + Interrupt Enable
+
+	// Autoriser globalement les interruptions (au niveau du processeur)
+	alt_irq_enable_all(ALT_IRQ_ENABLED);
+
+	init_LCD();
+	LCD_Write_Command(0x002C);
+	//int counter = 0 ;
+	while(1)
+	{
+		//counter ++;
+		printf( " coun te r = %d \n " , counter) ;
+		IOWR_32DIRECT(GPIO_0_BASE , 8 , counter) ;
+		//int value = IORD_32DIRECT(GPIO_0_BASE , 1) ;
+		//printf("Value: %d", value);
+	}
+}
+
+
+void timer_interrupt(void *context, alt_u32 id){
+	counter ++; // increase the counter;
+	// write counter value on the parallel port;
+	// acknowledge IRQ on the timer;
+	// Acknowledge du timer (remise à zéro du flag d’interruption)
+	IOWR_16DIRECT(TIMER_0_BASE, 0, 0x0);    // éventuellement reset du statut
+	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x7);    // recharger ou clear selon ton timer
+}
+
+void init_LCD() {
+
+      IOWR_8DIRECT(GPIO_LCD_BASE,LCD_PORT,LCD_RD_n|LCD_CS_n); // set reset on and 16 bits mode
+      while (counter<100){}   // include delay of at least 120 ms use your timer or a loop
+      IOWR_8DIRECT(GPIO_LCD_BASE,LCD_CLR,LCD_CS_n|LCD_IM0); // set reset off and 16 bits mode and enable LED_CS
+      IOWR_8DIRECT(GPIO_LCD_BASE,LCD_SET,LCD_RESET_n|LCD_RD_n); // set reset off and 16 bits mode and enable LED_CS
+      printf("%u\n",IORD_8DIRECT(GPIO_LCD_BASE,LCD_PIN));
+      while (counter<200){}   // include delay of at least 120 ms use your timer or a loop
+
+      LCD_Write_Command(0x0028);     //display OFF
+      LCD_Write_Command(0x0011);     //exit SLEEP mode
+      LCD_Write_Data(0x0000);
+
+      LCD_Write_Command(0x00CB);     //Power Control A
+      LCD_Write_Data(0x0039);     //always 0x39
+      LCD_Write_Data(0x002C);     //always 0x2C
+      LCD_Write_Data(0x0000);     //always 0x00
+      LCD_Write_Data(0x0034);     //Vcore = 1.6V
+      LCD_Write_Data(0x0002);     //DDVDH = 5.6V
+
+      LCD_Write_Command(0x00CF);     //Power Control B
+      LCD_Write_Data(0x0000);     //always 0x00
+      LCD_Write_Data(0x0081);     //PCEQ off
+      LCD_Write_Data(0x0030);     //ESD protection
+
+      LCD_Write_Command(0x00E8);     //Driver timing control A
+      LCD_Write_Data(0x0085);     //non - overlap
+      LCD_Write_Data(0x0001);     //EQ timing
+      LCD_Write_Data(0x0079);     //Pre-charge timing
+
+
+      LCD_Write_Command(0x00EA);     //Driver timing control B
+      LCD_Write_Data(0x0000);        //Gate driver timing
+      LCD_Write_Data(0x0000);        //always 0x00
+
+      LCD_Write_Command(0x00ED); //Power On sequence control
+      LCD_Write_Data(0x0064);        //soft start
+      LCD_Write_Data(0x0003);        //power on sequence
+      LCD_Write_Data(0x0012);        //power on sequence
+      LCD_Write_Data(0x0081);        //DDVDH enhance on
+
+      LCD_Write_Command(0x00F7);     //Pump ratio control
+      LCD_Write_Data(0x0020);     //DDVDH=2xVCI
+
+      LCD_Write_Command(0x00C0);    //power control 1
+      LCD_Write_Data(0x0026);
+      LCD_Write_Data(0x0004);     //second parameter for ILI9340 (ignored by ILI9341)
+
+      LCD_Write_Command(0x00C1);     //power control 2
+      LCD_Write_Data(0x0011);
+
+      LCD_Write_Command(0x00C5);     //VCOM control 1
+      LCD_Write_Data(0x0035);
+      LCD_Write_Data(0x003E);
+
+      LCD_Write_Command(0x00C7);     //VCOM control 2
+      LCD_Write_Data(0x00BE);
+
+      LCD_Write_Command(0x00B1);     //frame rate control
+      LCD_Write_Data(0x0000);
+      LCD_Write_Data(0x0010);
+
+      LCD_Write_Command(0x003A);    //pixel format = 16 bit per pixel
+      LCD_Write_Data(0x0055);
+
+      LCD_Write_Command(0x00B6);     //display function control
+      LCD_Write_Data(0x000A);
+      LCD_Write_Data(0x00A2);
+
+      LCD_Write_Command(0x00F2);     //3G Gamma control
+      LCD_Write_Data(0x0002);         //off
+
+      LCD_Write_Command(0x0026);     //Gamma curve 3
+      LCD_Write_Data(0x0001);
+
+      LCD_Write_Command(0x0036);     //memory access control = BGR
+      LCD_Write_Data(0x0000);
+
+      LCD_Write_Command(0x002A);     //column address set
+      LCD_Write_Data(0x0000);
+      LCD_Write_Data(0x0000);        //start 0x0000
+      LCD_Write_Data(0x0000);
+      LCD_Write_Data(0x00EF);        //end 0x00EF
+
+      LCD_Write_Command(0x002B);    //page address set
+      LCD_Write_Data(0x0000);
+      LCD_Write_Data(0x0000);        //start 0x0000
+      LCD_Write_Data(0x0001);
+      LCD_Write_Data(0x003F);        //end 0x013F
+
+      LCD_Write_Command(0x0029);
+}
+
+void LCD_Write_Command(int command) {
+  IOWR_16DIRECT(LCD_CTL_0_BASE,LCD_COMMANDE,command);
+}
+
+void LCD_Write_Data(int data) {
+	IOWR_16DIRECT(LCD_CTL_0_BASE,LCD_DATA,data);
+}
