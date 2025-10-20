@@ -14,10 +14,9 @@ module intro_qsys (
 	sdram_controller_wire_dqm,
 	sdram_controller_wire_ras_n,
 	sdram_controller_wire_we_n,
-	lcd_dma_0_conduit_end_lcd_cs_n,
-	lcd_dma_0_conduit_end_lcd_d_c_n,
-	lcd_dma_0_conduit_end_lcd_wr_n,
-	lcd_dma_0_conduit_end_lcd_data);	
+	lcd_0_conduit_end_d_c_n,
+	lcd_0_conduit_end_write_n,
+	lcd_0_conduit_end_databus);	
 
 	output		altpll_0_c2_clk;
 	input		clk_clk;
@@ -33,8 +32,7 @@ module intro_qsys (
 	output	[1:0]	sdram_controller_wire_dqm;
 	output		sdram_controller_wire_ras_n;
 	output		sdram_controller_wire_we_n;
-	output		lcd_dma_0_conduit_end_lcd_cs_n;
-	output		lcd_dma_0_conduit_end_lcd_d_c_n;
-	output		lcd_dma_0_conduit_end_lcd_wr_n;
-	output	[15:0]	lcd_dma_0_conduit_end_lcd_data;
+	output		lcd_0_conduit_end_d_c_n;
+	output		lcd_0_conduit_end_write_n;
+	output	[15:0]	lcd_0_conduit_end_databus;
 endmodule

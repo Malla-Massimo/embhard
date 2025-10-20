@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>20 oct. 2025 22:04:46</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1760990686897</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>20 oct. 2025 22:41:23</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1760992883878</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\master\EmbHard\project\software\led_counter_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\intro_qsys.sopcinfo</SopcDesignFile>
@@ -899,9 +899,9 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>lcd_dma_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000001F</addressRange>
-                <addressSpan>32</addressSpan>
+                <slaveDescriptor>LCD_0</slaveDescriptor>
+                <addressRange>0x00000000 - 0x00000003</addressRange>
+                <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
@@ -939,12 +939,6 @@
                 <addressRange>0x02001028 - 0x0200102F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>performance_counter_0</slaveDescriptor>
-                <addressRange>0x10000000 - 0x1000003F</addressRange>
-                <addressSpan>64</addressSpan>
-                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>gpio_LCD_0</slaveDescriptor>

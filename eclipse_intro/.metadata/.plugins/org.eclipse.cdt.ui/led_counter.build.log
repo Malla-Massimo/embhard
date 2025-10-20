@@ -1,20 +1,9 @@
-22:14:45 **** Incremental Build of configuration Nios II for project led_counter ****
+22:41:45 **** Incremental Build of configuration Nios II for project led_counter ****
 make all 
 Info: Building ../led_counter_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../led_counter_bsp/
 [BSP build complete]
-Info: Compiling led_counter.c to obj/default/led_counter.o
-nios2-elf-gcc -xc -MP -MMD -c -I../led_counter_bsp//HAL/inc -I../led_counter_bsp/ -I../led_counter_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/led_counter.o led_counter.c
-led_counter.c: In function 'main':
-led_counter.c:72:2: warning: implicit declaration of function 'alt_irq_register' [-Wimplicit-function-declaration]
-  alt_irq_register(TIMER_0_IRQ, NULL, (alt_isr_func)time_isr);
-  ^
-led_counter.c: In function 'LCD_RGB':
-led_counter.c:272:17: error: 'rick' undeclared (first use in this function)
-  LCD_dram_image(rick[0]);
-                 ^
-led_counter.c:272:17: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [obj/default/led_counter.o] Error 1
+[led_counter build complete]
 
-22:14:46 Build Finished (took 699ms)
+22:41:46 Build Finished (took 752ms)
 

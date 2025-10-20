@@ -4,8 +4,6 @@ Progress: Loading project/intro_qsys.qsys
 Progress: Reading input file
 Progress: Adding CPU [altera_nios2_gen2 18.1]
 Progress: Parameterizing module CPU
-Progress: Adding LCD_0 [LCD 1.0]
-Progress: Parameterizing module LCD_0
 Progress: Adding SDRAM_controller [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module SDRAM_controller
 Progress: Adding altpll_0 [altpll 18.1]
@@ -18,6 +16,8 @@ Progress: Adding gpio_LCD_0 [gpio_LCD 1.0]
 Progress: Parameterizing module gpio_LCD_0
 Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart
+Progress: Adding lcd_dma_0 [lcd_dma 1.0]
+Progress: Parameterizing module lcd_dma_0
 Progress: Adding performance_counter_0 [altera_avalon_performance_counter 18.1]
 Progress: Parameterizing module performance_counter_0
 Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 18.1]
@@ -41,8 +41,6 @@ Progress: Loading project/intro_qsys.qsys
 Progress: Reading input file
 Progress: Adding CPU [altera_nios2_gen2 18.1]
 Progress: Parameterizing module CPU
-Progress: Adding LCD_0 [LCD 1.0]
-Progress: Parameterizing module LCD_0
 Progress: Adding SDRAM_controller [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module SDRAM_controller
 Progress: Adding altpll_0 [altpll 18.1]
@@ -55,6 +53,8 @@ Progress: Adding gpio_LCD_0 [gpio_LCD 1.0]
 Progress: Parameterizing module gpio_LCD_0
 Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart
+Progress: Adding lcd_dma_0 [lcd_dma 1.0]
+Progress: Parameterizing module lcd_dma_0
 Progress: Adding performance_counter_0 [altera_avalon_performance_counter 18.1]
 Progress: Parameterizing module performance_counter_0
 Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 18.1]
@@ -70,27 +70,27 @@ Info: intro_qsys.jtag_uart: JTAG UART IP input clock need to be at least double 
 Info: intro_qsys.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: intro_qsys.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
 Info: intro_qsys: Generating intro_qsys "intro_qsys" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between cmd_demux.src7 and cmd_mux_007.sink0
-Info: Inserting clock-crossing logic between rsp_demux_007.src0 and rsp_mux.sink7
+Info: Inserting clock-crossing logic between cmd_demux_001.src8 and cmd_mux_008.sink0
+Info: Inserting clock-crossing logic between rsp_demux_008.src0 and rsp_mux_001.sink8
 Info: CPU: "intro_qsys" instantiated altera_nios2_gen2 "CPU"
-Info: LCD_0: "intro_qsys" instantiated LCD "LCD_0"
 Info: SDRAM_controller: Starting RTL generation for module 'intro_qsys_SDRAM_controller'
-Info: SDRAM_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=intro_qsys_SDRAM_controller --dir=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0003_SDRAM_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0003_SDRAM_controller_gen//intro_qsys_SDRAM_controller_component_configuration.pl  --do_build_sim=0  ]
+Info: SDRAM_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=intro_qsys_SDRAM_controller --dir=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0003_SDRAM_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0003_SDRAM_controller_gen//intro_qsys_SDRAM_controller_component_configuration.pl  --do_build_sim=0  ]
 Info: SDRAM_controller: Done RTL generation for module 'intro_qsys_SDRAM_controller'
 Info: SDRAM_controller: "intro_qsys" instantiated altera_avalon_new_sdram_controller "SDRAM_controller"
 Info: altpll_0: "intro_qsys" instantiated altpll "altpll_0"
 Info: gpio_0: "intro_qsys" instantiated gpio "gpio_0"
 Info: jtag_uart: Starting RTL generation for module 'intro_qsys_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=intro_qsys_jtag_uart --dir=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0007_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0007_jtag_uart_gen//intro_qsys_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=intro_qsys_jtag_uart --dir=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0007_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0007_jtag_uart_gen//intro_qsys_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'intro_qsys_jtag_uart'
 Info: jtag_uart: "intro_qsys" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: lcd_dma_0: "intro_qsys" instantiated lcd_dma "lcd_dma_0"
 Info: performance_counter_0: Starting RTL generation for module 'intro_qsys_performance_counter_0'
-Info: performance_counter_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=intro_qsys_performance_counter_0 --dir=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0008_performance_counter_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0008_performance_counter_0_gen//intro_qsys_performance_counter_0_component_configuration.pl  --do_build_sim=0  ]
+Info: performance_counter_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=intro_qsys_performance_counter_0 --dir=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0009_performance_counter_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0009_performance_counter_0_gen//intro_qsys_performance_counter_0_component_configuration.pl  --do_build_sim=0  ]
 Info: performance_counter_0: Done RTL generation for module 'intro_qsys_performance_counter_0'
 Info: performance_counter_0: "intro_qsys" instantiated altera_avalon_performance_counter "performance_counter_0"
 Info: sysid_qsys_0: "intro_qsys" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
 Info: timer_0: Starting RTL generation for module 'intro_qsys_timer_0'
-Info: timer_0:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=intro_qsys_timer_0 --dir=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0010_timer_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0010_timer_0_gen//intro_qsys_timer_0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer_0:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=intro_qsys_timer_0 --dir=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0011_timer_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0011_timer_0_gen//intro_qsys_timer_0_component_configuration.pl  --do_build_sim=0  ]
 Info: timer_0: Done RTL generation for module 'intro_qsys_timer_0'
 Info: timer_0: "intro_qsys" instantiated altera_avalon_timer "timer_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -107,71 +107,80 @@ Info: mm_interconnect_0: "intro_qsys" instantiated altera_mm_interconnect "mm_in
 Info: irq_mapper: "intro_qsys" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "intro_qsys" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'intro_qsys_CPU_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=intro_qsys_CPU_cpu --dir=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0013_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_2812372280636799846.dir/0013_cpu_gen//intro_qsys_CPU_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2025.10.20 17:58:27 (*) Starting Nios II generation
-Info: cpu: # 2025.10.20 17:58:27 (*)   Checking for plaintext license.
-Info: cpu: # 2025.10.20 17:58:28 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2025.10.20 17:58:28 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.10.20 17:58:28 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2025.10.20 17:58:28 (*)   Plaintext license not found.
-Info: cpu: # 2025.10.20 17:58:28 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2025.10.20 17:58:29 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2025.10.20 17:58:29 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.10.20 17:58:29 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2025.10.20 17:58:29 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2025.10.20 17:58:29 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.10.20 17:58:29 (*)   Creating all objects for CPU
-Info: cpu: # 2025.10.20 17:58:29 (*)     Testbench
-Info: cpu: # 2025.10.20 17:58:29 (*)     Instruction decoding
-Info: cpu: # 2025.10.20 17:58:29 (*)       Instruction fields
-Info: cpu: # 2025.10.20 17:58:29 (*)       Instruction decodes
-Info: cpu: # 2025.10.20 17:58:29 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2025.10.20 17:58:29 (*)       Instruction controls
-Info: cpu: # 2025.10.20 17:58:29 (*)     Pipeline frontend
-Info: cpu: # 2025.10.20 17:58:29 (*)     Pipeline backend
-Info: cpu: # 2025.10.20 17:58:31 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.10.20 17:58:32 (*)   Creating encrypted RTL
-Info: cpu: # 2025.10.20 17:58:32 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=intro_qsys_CPU_cpu --dir=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0014_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/inter/AppData/Local/Temp/alt0381_6933233335290002220.dir/0014_cpu_gen//intro_qsys_CPU_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2025.10.20 21:47:39 (*) Starting Nios II generation
+Info: cpu: # 2025.10.20 21:47:39 (*)   Checking for plaintext license.
+Info: cpu: # 2025.10.20 21:47:40 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2025.10.20 21:47:40 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.10.20 21:47:40 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.10.20 21:47:40 (*)   Plaintext license not found.
+Info: cpu: # 2025.10.20 21:47:40 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2025.10.20 21:47:41 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2025.10.20 21:47:41 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.10.20 21:47:41 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.10.20 21:47:41 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: cpu: # 2025.10.20 21:47:41 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.10.20 21:47:41 (*)   Creating all objects for CPU
+Info: cpu: # 2025.10.20 21:47:41 (*)     Testbench
+Info: cpu: # 2025.10.20 21:47:42 (*)     Instruction decoding
+Info: cpu: # 2025.10.20 21:47:42 (*)       Instruction fields
+Info: cpu: # 2025.10.20 21:47:42 (*)       Instruction decodes
+Info: cpu: # 2025.10.20 21:47:42 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2025.10.20 21:47:42 (*)       Instruction controls
+Info: cpu: # 2025.10.20 21:47:42 (*)     Pipeline frontend
+Info: cpu: # 2025.10.20 21:47:42 (*)     Pipeline backend
+Info: cpu: # 2025.10.20 21:47:45 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.10.20 21:47:47 (*)   Creating encrypted RTL
+Info: cpu: # 2025.10.20 21:47:48 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'intro_qsys_CPU_cpu'
 Info: cpu: "CPU" instantiated altera_nios2_gen2_unit "cpu"
-Info: CPU_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_data_master_translator"
-Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
-Info: CPU_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "CPU_data_master_agent"
-Info: jtag_uart_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_avalon_jtag_slave_agent"
-Info: jtag_uart_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_avalon_jtag_slave_agent_rsp_fifo"
+Info: lcd_dma_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "lcd_dma_0_avalon_master_translator"
+Info: SDRAM_controller_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "SDRAM_controller_s1_translator"
+Info: lcd_dma_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "lcd_dma_0_avalon_master_agent"
+Info: SDRAM_controller_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "SDRAM_controller_s1_agent"
+Info: SDRAM_controller_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "SDRAM_controller_s1_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
 Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
-Info: router_010: "mm_interconnect_0" instantiated altera_merlin_router "router_010"
 Info: CPU_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "CPU_data_master_limiter"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: LCD_0_avalon_slave_0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "LCD_0_avalon_slave_0_burst_adapter"
+Info: SDRAM_controller_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "SDRAM_controller_s1_burst_adapter"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_006: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_006"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_005: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_005"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_006: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_006"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_005"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: LCD_0_avalon_slave_0_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "LCD_0_avalon_slave_0_rsp_width_adapter"
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: CPU_data_master_to_SDRAM_controller_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "CPU_data_master_to_SDRAM_controller_s1_cmd_width_adapter"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
 Info: Reusing file C:/master/EmbHard/project/intro_qsys/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: avalon_st_adapter_002: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_002"
-Info: avalon_st_adapter_003: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_003"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_005: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_005"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_003" instantiated error_adapter "error_adapter_0"
-Info: intro_qsys: Done "intro_qsys" with 44 modules, 79 files
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_005" instantiated error_adapter "error_adapter_0"
+Info: intro_qsys: Done "intro_qsys" with 50 modules, 85 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

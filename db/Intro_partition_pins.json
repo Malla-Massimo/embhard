@@ -20,11 +20,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "LCD_WRn",
+					"strict" : false
+				},
+				{
 					"name" : "LCD_D_Cn",
 					"strict" : false
 				},
 				{
-					"name" : "LCD_WRn",
+					"name" : "LCD_CSn",
 					"strict" : false
 				},
 				{

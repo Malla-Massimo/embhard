@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'intro_qsys'
  * SOPC Builder design path: ../../intro_qsys.sopcinfo
  *
- * Generated: Mon Oct 20 22:04:49 CEST 2025
+ * Generated: Mon Oct 20 22:41:24 CEST 2025
  */
 
 /*
@@ -143,14 +143,27 @@
 
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_NEW_SDRAM_CONTROLLER
-#define __ALTERA_AVALON_PERFORMANCE_COUNTER
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
 #define __GPIO
 #define __GPIO_LCD
-#define __LCD_DMA
+#define __LCD
+
+
+/*
+ * LCD_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_LCD_0 LCD
+#define LCD_0_BASE 0x0
+#define LCD_0_IRQ -1
+#define LCD_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define LCD_0_NAME "/dev/LCD_0"
+#define LCD_0_SPAN 4
+#define LCD_0_TYPE "LCD"
 
 
 /*
@@ -300,35 +313,6 @@
 
 
 /*
- * lcd_dma_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_lcd_dma_0 lcd_dma
-#define LCD_DMA_0_BASE 0x0
-#define LCD_DMA_0_IRQ -1
-#define LCD_DMA_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LCD_DMA_0_NAME "/dev/lcd_dma_0"
-#define LCD_DMA_0_SPAN 32
-#define LCD_DMA_0_TYPE "lcd_dma"
-
-
-/*
- * performance_counter_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_performance_counter_0 altera_avalon_performance_counter
-#define PERFORMANCE_COUNTER_0_BASE 0x10000000
-#define PERFORMANCE_COUNTER_0_HOW_MANY_SECTIONS 3
-#define PERFORMANCE_COUNTER_0_IRQ -1
-#define PERFORMANCE_COUNTER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PERFORMANCE_COUNTER_0_NAME "/dev/performance_counter_0"
-#define PERFORMANCE_COUNTER_0_SPAN 64
-#define PERFORMANCE_COUNTER_0_TYPE "altera_avalon_performance_counter"
-
-
-/*
  * sysid_qsys_0 configuration
  *
  */
@@ -340,7 +324,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760990103
+#define SYSID_QSYS_0_TIMESTAMP 1760992727
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
