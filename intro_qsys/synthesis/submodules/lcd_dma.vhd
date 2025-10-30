@@ -28,8 +28,10 @@ entity DMA_LCD_ctrl is
 		master_read_o         	: out std_logic;
 		master_readdata_i	    : in std_logic_vector(15 downto 0) ;
 		master_waitrequest_i  	: in std_logic;
+		
 		-- IRQ generation
 		end_of_transaction_irq_o : out std_logic;		
+		
 		-- slave interface 
 		avalon_address_i    : in    std_logic_vector(2 downto 0) ;
 		avalon_cs_i         : in    std_logic                   ;  
@@ -38,6 +40,7 @@ entity DMA_LCD_ctrl is
 		avalon_rd_i         : in    std_logic                    ; 
 		avalon_waitrequest_o         : out    std_logic ;  
 		avalon_read_data_o  : out    std_logic_vector(31 downto 0);
+		
 		-- LCD interface
 		LCD_data_o      : out std_logic_vector(15 downto 0) ;
 		LCD_CS_n_o	  : out    std_logic ;		

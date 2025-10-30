@@ -28,10 +28,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LCD_CSn",
-					"strict" : false
-				},
-				{
 					"name" : "LCD_DATA[15]",
 					"strict" : false
 				},

@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="CPU_DMA" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="rick"/>
-			<item value="LCD_DMA_2_BASE"/>
-			<item value="LCD_DMA_2_IRQ"/>
-			<item value="lcd"/>
-			<item value="GPIO_LCD_BASE"/>
-			<item value="GPIO_BASE"/>
-			<item value="gpio"/>
-			<item value="GPIO_LCD_0_BASE"/>
+			<item value="CPU_DMA"/>
+			<item value="img_list"/>
+			<item value="counter"/>
+			<item value="LCD_DATA"/>
+			<item value="LCD_Write_Data"/>
+			<item value="LCD_DMA_adress"/>
+			<item value="LCD_DMA_Start"/>
+			<item value="sdram"/>
 		</list>
 		<list key="replacehistory">
+			<item value="LCD_DMA2_0_BASE"/>
+			<item value="LCD_DMA_2_BASE"/>
 			<item value="LCD_DMA_0_BASE"/>
 			<item value="GPIO_LCD_0_BASE"/>
 			<item value="GPIO_0_BASE"/>

@@ -1,43 +1,45 @@
 	component intro_qsys is
 		port (
-			altpll_0_c2_clk               : out   std_logic;                                        -- clk
-			clk_clk                       : in    std_logic                     := 'X';             -- clk
-			gpio_0_conduit_end_export     : inout std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			gpio_lcd_0_conduit_end_export : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- export
-			reset_reset_n                 : in    std_logic                     := 'X';             -- reset_n
-			sdram_controller_wire_addr    : out   std_logic_vector(11 downto 0);                    -- addr
-			sdram_controller_wire_ba      : out   std_logic_vector(1 downto 0);                     -- ba
-			sdram_controller_wire_cas_n   : out   std_logic;                                        -- cas_n
-			sdram_controller_wire_cke     : out   std_logic;                                        -- cke
-			sdram_controller_wire_cs_n    : out   std_logic;                                        -- cs_n
-			sdram_controller_wire_dq      : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
-			sdram_controller_wire_dqm     : out   std_logic_vector(1 downto 0);                     -- dqm
-			sdram_controller_wire_ras_n   : out   std_logic;                                        -- ras_n
-			sdram_controller_wire_we_n    : out   std_logic;                                        -- we_n
-			lcd_0_conduit_end_d_c_n       : out   std_logic;                                        -- d_c_n
-			lcd_0_conduit_end_write_n     : out   std_logic;                                        -- write_n
-			lcd_0_conduit_end_databus     : out   std_logic_vector(15 downto 0)                     -- databus
+			altpll_0_c2_clk                 : out   std_logic;                                        -- clk
+			clk_clk                         : in    std_logic                     := 'X';             -- clk
+			gpio_0_conduit_end_export       : inout std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			gpio_lcd_0_conduit_end_export   : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- export
+			lcd_dma2_0_conduit_end_d_c_n    : out   std_logic;                                        -- d_c_n
+			lcd_dma2_0_conduit_end_wr_n     : out   std_logic;                                        -- wr_n
+			lcd_dma2_0_conduit_end_databus  : out   std_logic_vector(15 downto 0);                    -- databus
+			lcd_dma2_0_conduit_end_lcd_cs_n : out   std_logic;                                        -- lcd_cs_n
+			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
+			sdram_controller_wire_addr      : out   std_logic_vector(11 downto 0);                    -- addr
+			sdram_controller_wire_ba        : out   std_logic_vector(1 downto 0);                     -- ba
+			sdram_controller_wire_cas_n     : out   std_logic;                                        -- cas_n
+			sdram_controller_wire_cke       : out   std_logic;                                        -- cke
+			sdram_controller_wire_cs_n      : out   std_logic;                                        -- cs_n
+			sdram_controller_wire_dq        : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+			sdram_controller_wire_dqm       : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdram_controller_wire_ras_n     : out   std_logic;                                        -- ras_n
+			sdram_controller_wire_we_n      : out   std_logic                                         -- we_n
 		);
 	end component intro_qsys;
 
 	u0 : component intro_qsys
 		port map (
-			altpll_0_c2_clk               => CONNECTED_TO_altpll_0_c2_clk,               --            altpll_0_c2.clk
-			clk_clk                       => CONNECTED_TO_clk_clk,                       --                    clk.clk
-			gpio_0_conduit_end_export     => CONNECTED_TO_gpio_0_conduit_end_export,     --     gpio_0_conduit_end.export
-			gpio_lcd_0_conduit_end_export => CONNECTED_TO_gpio_lcd_0_conduit_end_export, -- gpio_lcd_0_conduit_end.export
-			reset_reset_n                 => CONNECTED_TO_reset_reset_n,                 --                  reset.reset_n
-			sdram_controller_wire_addr    => CONNECTED_TO_sdram_controller_wire_addr,    --  sdram_controller_wire.addr
-			sdram_controller_wire_ba      => CONNECTED_TO_sdram_controller_wire_ba,      --                       .ba
-			sdram_controller_wire_cas_n   => CONNECTED_TO_sdram_controller_wire_cas_n,   --                       .cas_n
-			sdram_controller_wire_cke     => CONNECTED_TO_sdram_controller_wire_cke,     --                       .cke
-			sdram_controller_wire_cs_n    => CONNECTED_TO_sdram_controller_wire_cs_n,    --                       .cs_n
-			sdram_controller_wire_dq      => CONNECTED_TO_sdram_controller_wire_dq,      --                       .dq
-			sdram_controller_wire_dqm     => CONNECTED_TO_sdram_controller_wire_dqm,     --                       .dqm
-			sdram_controller_wire_ras_n   => CONNECTED_TO_sdram_controller_wire_ras_n,   --                       .ras_n
-			sdram_controller_wire_we_n    => CONNECTED_TO_sdram_controller_wire_we_n,    --                       .we_n
-			lcd_0_conduit_end_d_c_n       => CONNECTED_TO_lcd_0_conduit_end_d_c_n,       --      lcd_0_conduit_end.d_c_n
-			lcd_0_conduit_end_write_n     => CONNECTED_TO_lcd_0_conduit_end_write_n,     --                       .write_n
-			lcd_0_conduit_end_databus     => CONNECTED_TO_lcd_0_conduit_end_databus      --                       .databus
+			altpll_0_c2_clk                 => CONNECTED_TO_altpll_0_c2_clk,                 --            altpll_0_c2.clk
+			clk_clk                         => CONNECTED_TO_clk_clk,                         --                    clk.clk
+			gpio_0_conduit_end_export       => CONNECTED_TO_gpio_0_conduit_end_export,       --     gpio_0_conduit_end.export
+			gpio_lcd_0_conduit_end_export   => CONNECTED_TO_gpio_lcd_0_conduit_end_export,   -- gpio_lcd_0_conduit_end.export
+			lcd_dma2_0_conduit_end_d_c_n    => CONNECTED_TO_lcd_dma2_0_conduit_end_d_c_n,    -- lcd_dma2_0_conduit_end.d_c_n
+			lcd_dma2_0_conduit_end_wr_n     => CONNECTED_TO_lcd_dma2_0_conduit_end_wr_n,     --                       .wr_n
+			lcd_dma2_0_conduit_end_databus  => CONNECTED_TO_lcd_dma2_0_conduit_end_databus,  --                       .databus
+			lcd_dma2_0_conduit_end_lcd_cs_n => CONNECTED_TO_lcd_dma2_0_conduit_end_lcd_cs_n, --                       .lcd_cs_n
+			reset_reset_n                   => CONNECTED_TO_reset_reset_n,                   --                  reset.reset_n
+			sdram_controller_wire_addr      => CONNECTED_TO_sdram_controller_wire_addr,      --  sdram_controller_wire.addr
+			sdram_controller_wire_ba        => CONNECTED_TO_sdram_controller_wire_ba,        --                       .ba
+			sdram_controller_wire_cas_n     => CONNECTED_TO_sdram_controller_wire_cas_n,     --                       .cas_n
+			sdram_controller_wire_cke       => CONNECTED_TO_sdram_controller_wire_cke,       --                       .cke
+			sdram_controller_wire_cs_n      => CONNECTED_TO_sdram_controller_wire_cs_n,      --                       .cs_n
+			sdram_controller_wire_dq        => CONNECTED_TO_sdram_controller_wire_dq,        --                       .dq
+			sdram_controller_wire_dqm       => CONNECTED_TO_sdram_controller_wire_dqm,       --                       .dqm
+			sdram_controller_wire_ras_n     => CONNECTED_TO_sdram_controller_wire_ras_n,     --                       .ras_n
+			sdram_controller_wire_we_n      => CONNECTED_TO_sdram_controller_wire_we_n       --                       .we_n
 		);
 

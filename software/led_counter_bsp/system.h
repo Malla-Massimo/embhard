@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'intro_qsys'
  * SOPC Builder design path: ../../intro_qsys.sopcinfo
  *
- * Generated: Mon Oct 20 22:41:24 CEST 2025
+ * Generated: Thu Oct 30 19:02:16 CET 2025
  */
 
 /*
@@ -149,21 +149,7 @@
 #define __ALTPLL
 #define __GPIO
 #define __GPIO_LCD
-#define __LCD
-
-
-/*
- * LCD_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_LCD_0 LCD
-#define LCD_0_BASE 0x0
-#define LCD_0_IRQ -1
-#define LCD_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LCD_0_NAME "/dev/LCD_0"
-#define LCD_0_SPAN 4
-#define LCD_0_TYPE "LCD"
+#define __LCD_DMA2
 
 
 /*
@@ -301,7 +287,7 @@
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
 #define JTAG_UART_BASE 0x2001028
-#define JTAG_UART_IRQ 0
+#define JTAG_UART_IRQ 2
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
 #define JTAG_UART_READ_DEPTH 64
@@ -310,6 +296,20 @@
 #define JTAG_UART_TYPE "altera_avalon_jtag_uart"
 #define JTAG_UART_WRITE_DEPTH 64
 #define JTAG_UART_WRITE_THRESHOLD 8
+
+
+/*
+ * lcd_dma2_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_lcd_dma2_0 lcd_dma2
+#define LCD_DMA2_0_BASE 0x20000
+#define LCD_DMA2_0_IRQ 0
+#define LCD_DMA2_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define LCD_DMA2_0_NAME "/dev/lcd_dma2_0"
+#define LCD_DMA2_0_SPAN 32
+#define LCD_DMA2_0_TYPE "lcd_dma2"
 
 
 /*
@@ -324,7 +324,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760992727
+#define SYSID_QSYS_0_TIMESTAMP 1761847178
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -335,7 +335,7 @@
 
 #define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
 #define TIMER_0_ALWAYS_RUN 0
-#define TIMER_0_BASE 0x1000
+#define TIMER_0_BASE 0x0
 #define TIMER_0_COUNTER_SIZE 32
 #define TIMER_0_FIXED_PERIOD 0
 #define TIMER_0_FREQ 50000000

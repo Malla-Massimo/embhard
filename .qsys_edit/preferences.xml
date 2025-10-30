@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="175" />
+   <connections preferredWidth="191" />
    <irq preferredWidth="34" />
    <name preferredWidth="227" />
    <inputclock preferredWidth="155" />
@@ -11,7 +11,7 @@
    <description preferredWidth="269" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1920" height="1128" x="0" y="0" />
  <generation synthesis="VHDL" />
 </preferences>
