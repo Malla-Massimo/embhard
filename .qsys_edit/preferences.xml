@@ -11,7 +11,7 @@
    <description preferredWidth="269" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
+ <library expandedCategories="Project,Library" />
  <window width="1920" height="1128" x="0" y="0" />
  <generation synthesis="VHDL" />
 </preferences>

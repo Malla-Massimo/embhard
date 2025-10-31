@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'intro_qsys'
  * SOPC Builder design path: ../../intro_qsys.sopcinfo
  *
- * Generated: Thu Oct 30 19:02:16 CET 2025
+ * Generated: Fri Oct 31 15:00:31 CET 2025
  */
 
 /*
@@ -324,7 +324,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1761847178
+#define SYSID_QSYS_0_TIMESTAMP 1761918978
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -341,15 +341,15 @@
 #define TIMER_0_FREQ 50000000
 #define TIMER_0_IRQ 1
 #define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_0_LOAD_VALUE 499999
+#define TIMER_0_LOAD_VALUE 49999
 #define TIMER_0_MULT 0.001
 #define TIMER_0_NAME "/dev/timer_0"
-#define TIMER_0_PERIOD 10
+#define TIMER_0_PERIOD 1
 #define TIMER_0_PERIOD_UNITS "ms"
 #define TIMER_0_RESET_OUTPUT 0
 #define TIMER_0_SNAPSHOT 1
 #define TIMER_0_SPAN 32
-#define TIMER_0_TICKS_PER_SEC 100
+#define TIMER_0_TICKS_PER_SEC 1000
 #define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
 #define TIMER_0_TYPE "altera_avalon_timer"
 

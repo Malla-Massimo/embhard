@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="intro_qsys" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.10.30.19:00:05 -->
+ <!-- 2025.10.31.14:56:44 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1761847178</value>
+  <value>1761918978</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -9385,7 +9385,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1761847178</value>
+   <value>1761918978</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -9405,7 +9405,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1761847178</value>
+   <value>1761918978</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -9421,7 +9421,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1761847178</value>
+   <value>1761918978</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -9903,7 +9903,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.LOAD_VALUE</name>
-   <value>499999</value>
+   <value>49999</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MULT</name>
@@ -9911,7 +9911,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.PERIOD</name>
-   <value>10</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.PERIOD_UNITS</name>
@@ -9927,7 +9927,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TICKS_PER_SEC</name>
-   <value>100</value>
+   <value>1000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMEOUT_PULSE_OUTPUT</name>
@@ -9979,7 +9979,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="period">
    <type>java.lang.String</type>
-   <value>10</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -10061,7 +10061,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="loadValue">
    <type>java.lang.String</type>
-   <value>499999</value>
+   <value>49999</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -10077,7 +10077,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ticksPerSec">
    <type>double</type>
-   <value>100.0</value>
+   <value>1000.0</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -19022,5 +19022,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>586C25809DD70000019A36468770</uniqueIdentifier>
+ <uniqueIdentifier>586C25809DD70000019A3A8E1845</uniqueIdentifier>
 </EnsembleReport>

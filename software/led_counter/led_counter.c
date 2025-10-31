@@ -128,12 +128,12 @@ int main ( )
 			LCD_image(rick_roll_4);
 		}
 		else {
-			//IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x05);
-			IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x01);
-			while(!dma_end_flag){
-				//read_dma_state();
-			}
-			dma_end_flag = 0;
+			DMA_image(rick_roll_0);
+			DMA_image(rick_roll_1);
+			DMA_image(rick_roll_2);
+			DMA_image(rick_roll_3);
+			DMA_image(rick_roll_4);
+
 		}
 
 		/*
@@ -269,6 +269,10 @@ void LCD_DMA_Size(int data) {
 void LCD_DMA_adress(int data) {
     IOWR_32DIRECT(LCD_DMA2_0_BASE, DMA_POINTER, data);
 }
+/*
+void LCD_DMA_adress(const unsigned short *data) {
+    IOWR_32DIRECT(LCD_DMA2_0_BASE, DMA_POINTER, (uint32_t)data);
+}*/
 
 void LCD_DMA_IRQ_ACK() {
 	IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x04);
@@ -281,9 +285,10 @@ void LCD_DMA_Start() {
 void dma_isr(void * context, alt_u32 id)
 {
 	printf("dma isr\n");
-	dma_end_flag = 1;
+
 	LCD_DMA_IRQ_ACK();   // clear first
-	read_dma_state();    // then read debug info safely
+	dma_end_flag = 1;
+	//read_dma_state();    // then read debug info safely
 }
 
 
@@ -299,4 +304,24 @@ void LCD_image(const unsigned short *image)
 	printf("tsp: %d\n", tsp);
 	while (counter % 5 != 0)
 	{}
+}
+
+void DMA_image(const unsigned short *image)
+{
+	IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x00);
+	LCD_DMA_adress(image);
+
+	//IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x05);
+	IOWR_32DIRECT(LCD_DMA2_0_BASE,DMA_CTL,0x01);
+	int tsp_start = counter;
+	while(!dma_end_flag){
+		//read_dma_state();
+	}
+	int tsp = (int)counter - tsp_start;
+	printf("tsp: %d\n", tsp);
+	dma_end_flag = 0;
+	int i = 0;
+	//while (i < 200000){
+	//	i += 1;
+	//}
 }

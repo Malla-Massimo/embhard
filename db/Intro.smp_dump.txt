@@ -1,13 +1,14 @@
 
 State Machine - |Intro|intro_qsys:inst|dma_lcd_ctrl:lcd_dma2_0|dma_state_pres_s
-Name dma_state_pres_s.WRITE_LCD dma_state_pres_s.DMA_DONE dma_state_pres_s.WAIT_LCD dma_state_pres_s.DMA_WAIT_DATA dma_state_pres_s.READ_DMA dma_state_pres_s.INIT_CNT dma_state_pres_s.IDLE 
-dma_state_pres_s.IDLE 0 0 0 0 0 0 0 
-dma_state_pres_s.INIT_CNT 0 0 0 0 0 1 1 
-dma_state_pres_s.READ_DMA 0 0 0 0 1 0 1 
-dma_state_pres_s.DMA_WAIT_DATA 0 0 0 1 0 0 1 
-dma_state_pres_s.WAIT_LCD 0 0 1 0 0 0 1 
-dma_state_pres_s.DMA_DONE 0 1 0 0 0 0 1 
-dma_state_pres_s.WRITE_LCD 1 0 0 0 0 0 1 
+Name dma_state_pres_s.LCD_DONE dma_state_pres_s.WRITE_LCD dma_state_pres_s.DMA_DONE dma_state_pres_s.WAIT_LCD dma_state_pres_s.DMA_WAIT_DATA dma_state_pres_s.READ_DMA dma_state_pres_s.INIT_CNT dma_state_pres_s.IDLE 
+dma_state_pres_s.IDLE 0 0 0 0 0 0 0 0 
+dma_state_pres_s.INIT_CNT 0 0 0 0 0 0 1 1 
+dma_state_pres_s.READ_DMA 0 0 0 0 0 1 0 1 
+dma_state_pres_s.DMA_WAIT_DATA 0 0 0 0 1 0 0 1 
+dma_state_pres_s.WAIT_LCD 0 0 0 1 0 0 0 1 
+dma_state_pres_s.DMA_DONE 0 0 1 0 0 0 0 1 
+dma_state_pres_s.WRITE_LCD 0 1 0 0 0 0 0 1 
+dma_state_pres_s.LCD_DONE 1 0 0 0 0 0 0 1 
 
 State Machine - |Intro|intro_qsys:inst|dma_lcd_ctrl:lcd_dma2_0|lcd_state_pres_s
 Name lcd_state_pres_s.S4 lcd_state_pres_s.S3 lcd_state_pres_s.S2 lcd_state_pres_s.S1 lcd_state_pres_s.IDLE 
